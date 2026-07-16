@@ -213,6 +213,16 @@ CREATE OR REPLACE TABLE raw_subsidy_claims (
     _source_file     VARCHAR
 );
 
+CREATE OR REPLACE TABLE raw_subsidy_claims_2026 (
+    claim_id         VARCHAR,
+    facility_id      VARCHAR,
+    claim_month      VARCHAR,
+    claimed_children VARCHAR,
+    claim_amount     VARCHAR,
+    submitted_date   VARCHAR,
+    claim_status     VARCHAR
+);
+
 -- ── inspections ────────────────────────────────────────────────────────────
 CREATE OR REPLACE TABLE raw_inspections (
     inspection_id     VARCHAR,
