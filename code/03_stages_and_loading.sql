@@ -405,23 +405,15 @@ SELECT COUNT(*) AS still_40 FROM raw_operators;   -- still 40. Not 80.
    We are going to load it three ways and watch what happens.
 */
 
--- ── A staging table so we don't pollute the real one ───────────────────────
-CREATE OR REPLACE TABLE raw_subsidy_claims_2026 LIKE raw_subsidy_claims;
+    
 
 
 /* ── ATTEMPT 1: ON_ERROR = ABORT_STATEMENT (the strict default) ───────────── */
 
-COPY INTO raw_subsidy_claims_2026 (
-    claim_id, facility_id, claim_month, claimed_children,
-    claim_amount, submitted_date, claim_status, _source_file
-)
-FROM (
-    SELECT $1, $2, $3, $4, $5, $6, $7, METADATA$FILENAME
-    FROM @stg_childcare/subsidy_claims_2026_Q1_BROKEN.csv
-)
+COPY INTO raw_subsidy_claims_2026
+FROM @stg_childcare/subsidy_claims_2026_Q1_BROKEN.csv
 FILE_FORMAT = (FORMAT_NAME = ff_csv_childcare)
-ON_ERROR     = 'ABORT_STATEMENT';
-
+ON_ERROR    = 'ABORT_STATEMENT';
 --   ❌ THIS FAILS. Read the error message — it names the row and the reason.
 --      Zero rows loaded. The good rows did NOT load either.
 --
@@ -478,16 +470,10 @@ ORDER BY LINE;
 
 /* ── ATTEMPT 2: ON_ERROR = CONTINUE  ⚠️ THE DANGEROUS ONE ⚠️ ──────────────── */
 
-COPY INTO raw_subsidy_claims_2026 (
-    claim_id, facility_id, claim_month, claimed_children,
-    claim_amount, submitted_date, claim_status, _source_file
-)
-FROM (
-    SELECT $1, $2, $3, $4, $5, $6, $7, METADATA$FILENAME
-    FROM @stg_childcare/subsidy_claims_2026_Q1_BROKEN.csv
-)
+COPY INTO raw_subsidy_claims_2026
+FROM @stg_childcare/subsidy_claims_2026_Q1_BROKEN.csv
 FILE_FORMAT = (FORMAT_NAME = ff_csv_childcare)
-ON_ERROR     = 'CONTINUE';
+ON_ERROR    = 'CONTINUE';
 
 --   ✅ "SUCCESS." Some rows loaded. The bad ones were skipped.
 
@@ -557,17 +543,15 @@ CREATE OR REPLACE TABLE raw_claims_quarantine (
 TRUNCATE TABLE raw_subsidy_claims_2026;
 
 -- Load the good rows...
-COPY INTO raw_subsidy_claims_2026 (
-    claim_id, facility_id, claim_month, claimed_children,
-    claim_amount, submitted_date, claim_status, _source_file
-)
-FROM (
-    SELECT $1, $2, $3, $4, $5, $6, $7, METADATA$FILENAME
-    FROM @stg_childcare/subsidy_claims_2026_Q1_BROKEN.csv
-)
+COPY INTO raw_subsidy_claims_2026
+FROM @stg_childcare/subsidy_claims_2026_Q1_BROKEN.csv
 FILE_FORMAT = (FORMAT_NAME = ff_csv_childcare)
-ON_ERROR     = 'CONTINUE'
-FORCE        = TRUE;
+ON_ERROR    = 'CONTINUE'
+FORCE       = TRUE;
+
+SELECT COUNT(*) AS loaded FROM raw_subsidy_claims_2026;
+
+SELECT * FROM raw_subsidy_claims_2026;
 
 -- ...and immediately capture what got rejected.
 INSERT INTO raw_claims_quarantine (error_message, source_file, line_number, rejected_record)
@@ -619,7 +603,7 @@ SELECT
     FIRST_ERROR_MESSAGE,
     LAST_LOAD_TIME
 FROM SNOWFLAKE.ACCOUNT_USAGE.COPY_HISTORY
-WHERE TABLE_CATALOG = 'CHILDCARE_AUDIT'
+WHERE TABLE_CATALOG_NAME = 'CHILDCARE_AUDIT'
   AND LAST_LOAD_TIME >= DATEADD(hour, -3, CURRENT_TIMESTAMP())
 ORDER BY LAST_LOAD_TIME DESC;
 
