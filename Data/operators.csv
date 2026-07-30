@@ -1,0 +1,41 @@
+operator_id,operator_name,operator_type,region,license_number,license_status,licensed_capacity,license_start_date,contact_email
+OP0001,Sunny Nest Childcare,Non-Profit,Edmonton,AB-404410,Probation,75,2016-05-11,admin@sunnynest.ca
+OP0002,Willow Days Childcare,Private,South,AB-277207,Active,150,2018-02-09,admin@willowdays.ca
+OP0003,Aspen Learners Childcare,School Board,South,AB-803613,Active,150,2020-09-11,admin@aspenlearners.ca
+OP0004,Chinook House Childcare,Non-Profit,edmonton,AB-706716,Active,50,2020-10-14,admin@chinookhouse.ca
+OP0005,Chinook Place Childcare,Non-Profit,Central,AB-825157,Active,150,2020-08-12,admin@chinookplace.ca
+OP0006,Meadow Grove Childcare  ,Non-Profit,Calgary,AB-614315,Active,60,2019-03-18,admin@meadowgrove.ca
+OP0007,Prairie Circle Childcare,Municipal,North,AB-956459,Active,50,2016-01-14,admin@prairiecircle.ca
+OP0008,Sunny Circle Childcare,Private,South,AB-967876,Active,,2018-12-14,admin@sunnycircle.ca
+OP0009,Cedar Beginnings Childcare,Municipal,Edmonton,AB-605647,Active,50,2021-02-28,admin@cedarbeginnings.ca
+OP0010,Lakeside House Childcare,Non-Profit,Edmonton,AB-308638,Active,120,03/14/2019,admin@lakesidehouse.ca
+OP0011,Silver Place Childcare,Municipal,South,AB-474226,Active,40,2015-07-10,admin@silverplace.ca
+OP0012,Bright Grove Childcare,School Board,EDMONTON,AB-142176,Active,50,2022-05-22,admin@brightgrove.ca
+OP0013,Chinook Care Childcare,Non-Profit,South,AB-594080,Active,150,2015-09-27,admin@chinookcare.ca
+OP0014,Rocky Learners Childcare,School Board,Central,AB-788140,Active,60,2016-01-26,admin@rockylearners.ca
+OP0015,Foothills Steps Childcare,School Board,Central,AB-217057,Active,90,2020-11-02,admin@foothillssteps.ca
+OP0016, Foothills Place Childcare,Non-Profit,Central,AB-758865,Active,120,2021-03-11,admin@foothillsplace.ca
+OP0017,Maple Place Childcare,Municipal,North,AB-897585,Active,50,2016-12-01,admin@mapleplace.ca
+OP0018,Lakeside Learners Childcare,School Board,Edmonton,AB-126190,Active,150,2020-06-06,admin@lakesidelearners.ca
+OP0019,Willow Corner Childcare,Non-Profit,North,AB-442066,Active,75,2015-01-22,admin@willowcorner.ca
+OP0020,Chinook Academy Childcare,Municipal, Calgary,AB-328556,Active,150,2016-03-19,admin@chinookacademy.ca
+OP0021,Cedar Place Childcare,Municipal,South,AB-947919,Active,100,2020-09-18,admin@cedarplace.ca
+OP0022,Silver Garden Childcare,School Board,Central,AB-478538,Active,80,2018-01-22,admin@silvergarden.ca
+OP0023,Silver Corner Childcare,Municipal,Calgary,AB-115625,Active,,2019-03-12,admin@silvercorner.ca
+OP0024,Little Circle Childcare,School Board,North,AB-705698,Active,100,2019-07-21,admin@littlecircle.ca
+OP0025,Riverbend Nest Childcare,Non-Profit,Edmonton,AB-327233,Probation,150,2020-05-13,admin@riverbendnest.ca
+OP0026,Willow Steps Childcare,Non-Profit,Edmonton,AB-809834,Active,80,2020/07/01,admin@willowsteps.ca
+OP0027,Little Nest Childcare,Municipal,Central,AB-126925,Active,40,2016-03-10,admin@littlenest.ca
+OP0028,Riverbend Care Childcare,Private,calgary ,AB-904505,Active,120,2016-10-10,admin@riverbendcare.ca
+OP0029,Harmony Beginnings Childcare,Municipal,Central,AB-772582,Active,50,2019-08-03,admin@harmonybeginnings.ca
+OP0030,Meadow Place Childcare,School Board,North,AB-566810,Active,75,2021-12-24,admin@meadowplace.ca
+OP0031,Beaverhill Circle Childcare,Private,Central,AB-882719,Active,80,2021-05-23,admin@beaverhillcircle.ca
+OP0032,Meadow Care Childcare,Municipal,Calgary,AB-711757,Active,100,15-08-2018,admin@meadowcare.ca
+OP0033,Silver Academy Childcare,Private,North,AB-516378,Active,120,2022-02-20,admin@silveracademy.ca
+OP0034,Little Learners Childcare,Non-Profit,Nrth,AB-231102,Active,50,2023-05-28,admin@littlelearners.ca
+OP0035,Pinecrest Nest Childcare,School Board,South,AB-248512,Active,50,2019-05-12,admin@pinecrestnest.ca
+OP0036,Rocky Place Childcare,School Board,Central,AB-702930,Active,50,2015-03-23,admin@rockyplace.ca
+OP0037,Bright Days Childcare,School Board,Central,AB-258057,Active,90,2019-05-11,admin@brightdays.ca
+OP0038,Beaverhill Kids Childcare,Municipal,North,AB-682695,Active,60,2018-07-04,admin@beaverhillkids.ca
+OP0039,Cedar Steps Childcare,School Board,North,AB-350731,Active,50,2022-07-10,admin@cedarsteps.ca
+OP0040,Golden Place Childcare,Private,Calgary,AB-779190,Active,90,2015-12-02,admin@goldenplace.ca
